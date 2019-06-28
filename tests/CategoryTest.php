@@ -8,8 +8,7 @@ use MannikJ\Laravel\ModelConfigs\Models\Categories\ConfigType;
 
 class CategoryTest extends LaravelTest
 {
-    /** @test */
-    public function test_type()
+    public function type()
     {
         $configCategory = Category::create(['name' => 'Config Types']);
         $schemaCategory = Category::create(['name' => 'JSON Schema']);
