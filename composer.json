@@ -1,0 +1,64 @@
+{
+    "name": "mannikj/laravel-model-configs",
+    "description": "Add versioned and categorizable json configurations to your eloquent models",
+    "keywords": [
+        "mannikj",
+        "laravel-model-configs"
+    ],
+    "homepage": "https://github.com/mannikj/laravel-model-configs",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jannik Malken",
+            "email": "mannikj@web.de",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/MannikJ/laravel-categories",
+            "minimum-stability": "dev"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*",
+        "mannikj/laravel-sti": "^1.1",
+        "mpociot/versionable": "3.1.1",
+        "rinvex/laravel-cacheable": "^2.1",
+        "rinvex/laravel-categories": "^2.1"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MannikJ\\Laravel\\ModelConfigs\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MannikJ\\Laravel\\ModelConfigs\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --colors=always --verbose --testdox",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MannikJ\\Laravel\\ModelConfigs\\ModelConfigsServiceProvider"
+            ],
+            "aliases": {
+                "ModelConfigs": "MannikJ\\Laravel\\ModelConfigs\\ModelConfigsFacade"
+            }
+        }
+    }
+}
